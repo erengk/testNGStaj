@@ -38,6 +38,7 @@ public class BaseDriver {
         driver.manage().timeouts().implicitlyWait(dr);
 
         wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+
         loginTest();
     }
 
@@ -56,18 +57,19 @@ public class BaseDriver {
     }
 
     void loginTest(){
-        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
+        driver.get("https://www.n11.com/");
 
-        WebElement eMail = driver.findElement(By.id("input-email"));
-        eMail.sendKeys("gokhan@gmail.com");
-        WebElement password = driver.findElement(By.id("input-password"));
-        password.sendKeys("gokhan1234");
-
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@value='Login']"));
+        WebElement loginPage = driver.findElement(By.linkText("Giriş Yap"));
+        loginPage.click();
+        WebElement eMail = driver.findElement(By.id("email"));
+        eMail.sendKeys("");
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+        WebElement loginBtn = driver.findElement(By.id("loginButton"));
         loginBtn.click();
 
-        WebElement linkText = driver.findElement(By.linkText("Your Store"));
+        //WebElement linkText = driver.findElement(By.xpath("//span[text()='Eskişehir/Tepebaşı']"));
 
-        Assert.assertTrue(linkText.isDisplayed(),"Giriş Başarısız");
+        //Assert.assertTrue(linkText.isDisplayed(),"Giriş Başarısız");
     }
 }

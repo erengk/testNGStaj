@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _04_SubscribeNewsLetter extends BaseDriver {
+
     By newsletterLink = By.xpath("(//a[text()='Newsletter'])[1]");
     By subscribeYes = By.xpath("(//input[@type='radio'])[1]");
     By subscribeNo = By.xpath("(//input[@type='radio'])[2]");
