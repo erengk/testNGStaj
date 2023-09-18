@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="test1">
+        <parameter name="Aranacak" value="Macbook"></parameter>
+        <classes>
+            <class name="Gun04._04_Example">
+            </class>
+        </classes>
+    </test>
+</suite>

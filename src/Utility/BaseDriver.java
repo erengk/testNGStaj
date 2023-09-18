@@ -62,9 +62,9 @@ public class BaseDriver {
         WebElement loginPage = driver.findElement(By.linkText("Giriş Yap"));
         loginPage.click();
         WebElement eMail = driver.findElement(By.id("email"));
-        eMail.sendKeys("");
+        eMail.sendKeys("gkhnrnkmr@gmail.com");
         WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
+        password.sendKeys("test12345*/");
         WebElement loginBtn = driver.findElement(By.id("loginButton"));
         loginBtn.click();
 
