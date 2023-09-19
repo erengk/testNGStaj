@@ -1,6 +1,7 @@
 package Gun04;
 
 import Utility.BaseDriver;
+import Utility.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,11 +13,16 @@ public class _04_Example extends BaseDriver {
     @Test
     @Parameters("Aranacak")
     void Test1(String gelenMesaj){
+        Tools.WaitFunction(3);
+        driver.switchTo().alert().dismiss();
+        driver.switchTo().alert().dismiss();
         WebElement searchBox = driver.findElement(By.id("searchData"));
         searchBox.sendKeys(gelenMesaj);
 
         WebElement iconSearch = driver.findElement(By.className("iconsSearch"));
         iconSearch.click();
+        driver.switchTo().alert().dismiss();
+        driver.switchTo().alert().dismiss();
 
         WebElement message = driver.findElement(By.cssSelector("div.resultText  > h1"));
 
