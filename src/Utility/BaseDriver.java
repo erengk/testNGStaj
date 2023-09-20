@@ -60,22 +60,39 @@ public class BaseDriver {
     }
 
     void loginTest(){
-        driver.get("https://www.n11.com/");
 
-        WebElement loginPage = driver.findElement(By.linkText("Giriş Yap"));
-        loginPage.click();
-        WebElement eMail = driver.findElement(By.id("email"));
-        eMail.sendKeys("gkhnrnkmr@gmail.com");
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("test12345*/");
-        WebElement loginBtn = driver.findElement(By.id("loginButton"));
-        List<WebElement> alerts = driver.findElements(By.xpath(""));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();",loginBtn);
-        loginBtn.click();
+//        driver.get("https://www.n11.com/");
+//        WebElement loginPage = driver.findElement(By.linkText("Giriş Yap"));
+//        loginPage.click();
+//        WebElement eMail = driver.findElement(By.id("email"));
+//        eMail.sendKeys("gkhnrnkmr@gmail.com");
+//        WebElement password = driver.findElement(By.id("password"));
+//        password.sendKeys("test12345*/");
+//        WebElement loginBtn = driver.findElement(By.id("loginButton"));
+//        List<WebElement> alerts = driver.findElements(By.xpath(""));
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        js.executeScript("arguments[0].click();",loginBtn);
+//        loginBtn.click();
 
         //WebElement linkText = driver.findElement(By.xpath("//span[text()='Eskişehir/Tepebaşı']"));
 
         //Assert.assertTrue(linkText.isDisplayed(),"Giriş Başarısız");
+
+
+        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
+        WebElement emailAddress = driver.findElement(By.id("input-email"));
+        emailAddress.sendKeys("carlosSantana@gmail.com");
+        WebElement password = driver.findElement(By.id("input-password"));
+        password.sendKeys("1234");
+        WebElement loginBtn = driver.findElement(By.xpath("//input[@type='submit']"));
+        loginBtn.click();
+
+        WebElement assertElement = driver.findElement(By.xpath("(//a[text()='Edit Account'])[1]"));
+        Assert.assertTrue(assertElement.isDisplayed(),"Giriş Başarısız");
     }
 }
+/*
+https://opencart.abstracta.us/index.php?route=account/login
+carlosSantana@gmail.com
+1234
+ */
