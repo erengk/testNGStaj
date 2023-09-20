@@ -51,6 +51,8 @@ public class _03_PlaceOrderTest extends BaseDriver {
         wait.until(ExpectedConditions.visibilityOf(elements.buttonShippingMethod));
         elements.buttonShippingMethod.click();
         wait.until(ExpectedConditions.elementToBeClickable(elements.agreeBox));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1000);");
         elements.agreeBox.click();
         wait.until(ExpectedConditions.visibilityOf(elements.paymentMethod));
         elements.paymentMethod.click();
